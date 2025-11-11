@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="dndclass.db" readonly="0" foreign_keys="0" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1035"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="dnd5_classes" custom_title="0" dock_id="3" table="4,12:maindnd5_classes"/><dock_state state="000000ff00000000fd0000000100000002000004e600000381fc0100000003fb000000160064006f0063006b00420072006f00770073006500310100000000000004e60000000000000000fb000000160064006f0063006b00420072006f00770073006500320100000000000004e60000000000000000fb000000160064006f0063006b00420072006f00770073006500330100000000000004e60000011e00ffffff000002580000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="dnd5_classes" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="53"/><column index="2" value="78"/><column index="3" value="101"/><column index="4" value="680"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">DROP TABLE IF EXISTS dnd5_classes;
+
+CREATE TABLE dnd5_classes (
+  class_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  class_name TEXT NOT NULL,
+  class_ability TEXT NOT NULL,
+  class_description TEXT NOT NULL
+);
+
+INSERT INTO dnd5_classes (class_id, class_name, class_ability, class_description) VALUES
+(1, 'artificer', 'intelligence', '-mad scientist personified-'),
+(2, 'barbarian', 'strength', '-big fuck-off muscles-'),
+(3, 'bard', 'charisma', '-dms beware, no character is safe-'),
+(4, 'cleric', 'wisdom', '-never piss off the healer-'),
+(5, 'druid', 'wisdom', '-hippies-'),
+(6, 'fighter', 'strength', '-big stick go BONK-'),
+(7, 'monk', 'dexterity', '-i punch this guy 18 times!-'),
+(8, 'paladin', 'strength', '-murdering with the power of god-'),
+(9, 'ranger', 'dexterity', '-the sniper *queue TF2 music*-'),
+(10, 'rogue', 'dexterity', '-i sneak attack him foooor... 55d6 damage-'),
+(11, 'sorcerer', 'charisma', '-magic through the power of rizz-'),
+(12, 'warlock', 'charisma', '-magic through the power of sugar daddies-'),
+(13, 'wizard', 'intelligence', '-spend 20 years reading books, just to find out you just have to believe hard enough-');
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
