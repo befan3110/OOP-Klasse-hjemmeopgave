@@ -94,3 +94,30 @@ class Database:
         self._execute(query, (class_id,))
 
 
+if __name__ == "__main__":
+    # Lokal import så filen kan køres selvstændigt
+    from klasseopgave import dnd_class
+
+    db = Database()
+
+    # Opret eksempelobjekt ud fra din allerede lavede klasse
+    sample = dnd_class("commoner", "nothing", "weak ahh mofo")
+
+    # Indsæt i databasen ved at bruge modelens felter
+    # understøtter både gamle feltnavne (name, abilityscore, desc)
+    # og de nye (class_name, class_ability, class_description)
+    name = getattr(sample, "class_name", None) or getattr(sample, "name", None)
+    ability = getattr(sample, "class_ability", None) or getattr(sample, "abilityscore", None)
+    desc = getattr(sample, "class_description", None) or getattr(sample, "desc", None)
+
+    if name:
+        db.insert(name, ability, desc)
+
+    # Vis hvad der ligger i databasen nu
+    print("All classes:")
+    for row in db.load_all():
+        # _run_query kan returnere dict eller modelobjekt afhængigt af implementering
+        if isinstance(row, dict):
+            print(row.get("class_name") or row.get("name"))
+        else:
+            print(getattr(row, "class_name", None) or getattr(row, "name", None) or str(row))
