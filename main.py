@@ -3,14 +3,28 @@ from klasseopgave import dnd_class
 
 db = Database()
 
-# Tilføj ny klasse
-db.insert("bloodhunter", "strength", "fights using cursed blood magic")
+# Insert eksempel
+# db.insert("Bloodhunter", "Strength", "Uses cursed blood magic")
 
-# Søg efter klasser med "wisdom"
-print(db.search("wisdom"))
+# Search
+print("Search result for 'Strength':")
+for c in db.search("Strength"):
+    print(c)
+    print("------")
 
-# Hent en klasse fra id
-print(db.load(3))  # for eksempel bard
+# Load specifik
+print("Load class with ID 1:")
+print(db.load(1))
 
-# Hent alle
-print(db.load_all())
+# Load all
+print("\nAll classes:")
+for c in db.load_all():
+    print(c)
+    print("------")
+
+# Update example
+updated_class = dnd_class(None, "Wizard", "Intelligence", "Smart magic boi")
+db.update(1, updated_class)
+
+# Delete example
+db.delete(14)

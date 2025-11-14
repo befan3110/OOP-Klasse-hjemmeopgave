@@ -1,15 +1,17 @@
 class dnd_class:
-    def __init__(self, name, abilityscore, desc):
-        self.name = name
-        self.abilityscore = abilityscore
-        self.desc = desc
-    def showclass(self):
-        print(f"your searched class is {self.name}, it uses {self.abilityscore} and is described by {self.desc}")
+    def __init__(self, class_id=None, class_name=None, class_ability=None, class_description=None):
+        self.class_id = class_id
+        self.class_name = class_name
+        self.class_ability = class_ability
+        self.class_description = class_description
 
+    def __str__(self):
+        return (
+            f"[{self.class_id}] {self.class_name}\n"
+            f"Ability: {self.class_ability}\n"
+            f"Description: {self.class_description}"
+        )
 
-Class1 = dnd_class("barbarian", "strength", "se database bro")
-
-Class1.showclass()
 """
 class spells:
     def __init__(self, name, level, casttime, range, components, dura, desc, higher_levels):
