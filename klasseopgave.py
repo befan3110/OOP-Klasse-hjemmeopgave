@@ -10,7 +10,7 @@ class dnd_class:
 Class1 = dnd_class("barbarian", "strength", "se database bro")
 
 Class1.showclass()
-
+"""
 class spells:
     def __init__(self, name, level, casttime, range, components, dura, desc, higher_levels):
 
@@ -29,3 +29,4 @@ class spells:
 Fireball = spells("Fireball", "3rd", "action", "60 feet", "gunpowder idk", "instant", "BOOM!", "BIGGER BOOM!")
 
 Fireball.showspell()
+"""

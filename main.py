@@ -1,4 +1,5 @@
 from database import Database
+from klasseopgave import dnd_class
 
 db = Database()
 
